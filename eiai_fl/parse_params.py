@@ -13,7 +13,7 @@ def parse_parameters(*, parameters, log):
     if fl_field_separator is None or fl_field_separator == '':
         fl_field_separator = ','
     parameters_df = pd.DataFrame(columns=['Key', 'Value'],)
-    parameter_list = parameters.split(f'{fl_left_delimiter}{fl_field_separator}')
+    parameter_list = parameters.split(f'{fl_right_delimiter}{fl_field_separator}')
     log.debug(f"Parameter list: {parameter_list}")
     for parameter in parameter_list:
         key = parameter.split(f'{fl_left_delimiter}')[0].lower()
